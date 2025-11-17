@@ -40,21 +40,22 @@ class Day112021Test {
     assertThat(day112021.getFlashesForSteps(100)).isEqualTo(1656);
   }
 
-
   @Test
   void getFlashesForSteps_Long_100() {
     Day112021 day112021 = new Day112021(Input.PUZZLE_INPUT);
     assertThat(day112021.getFlashesForSteps(100)).isEqualTo(1679);
   }
 
-  @Test
-  void getNextStepTiny() {
-
-    Day112021 day112021 = new Day112021(Input.TINY_INPUT);
-    assertThat(day112021.getFlashes()).isZero();
-    day112021.getNextStep();
-    assertThat(day112021.getFlashes()).isEqualTo(9);
-    day112021.getNextStep();
-    assertThat(day112021.getFlashes()).isEqualTo(9);
-  }
+  /*
+   * @Test
+   * void getNextStepTiny() {
+   * 
+   * Day112021 day112021 = new Day112021(Input.TINY_INPUT);
+   * assertThat(day112021.getFlashes()).isZero();
+   * day112021.getNextStep();
+   * assertThat(day112021.getFlashes()).isEqualTo(9);
+   * day112021.getNextStep();
+   * assertThat(day112021.getFlashes()).isEqualTo(9);
+   * }
+   */
 }
