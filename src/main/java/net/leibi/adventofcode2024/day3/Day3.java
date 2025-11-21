@@ -20,15 +20,14 @@ public class Day3 {
         while (matcher.find()) {
             int x = Integer.parseInt(matcher.group(1));
             int y = Integer.parseInt(matcher.group(2));
-           muls.add(new Mul(x, y));
+            muls.add(new Mul(x, y));
 
         }
 
-
         String c = "foo";
         // set character "x" at index 0 of the string c
-        Arrays.tostr
-        c.indexOf()
+        // Arrays.tostr
+        // c.indexOf()
         return muls;
     }
 
