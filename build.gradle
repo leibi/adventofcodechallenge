@@ -1,5 +1,6 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id "net.ltgt.errorprone" version "4.2.0"
 }
 
 group = 'net.leibi'
@@ -22,11 +23,12 @@ repositories {
 }
 
 dependencies {
-
+    errorprone 'com.uber.nullaway:nullaway:0.12.12'
+    api 'org.jspecify:jspecify:1.0.0'
     implementation 'com.google.guava:guava:31.1-jre'
-    compileOnly    'org.projectlombok:lombok:1.18.42'
+    compileOnly 'org.projectlombok:lombok:1.18.42'
     annotationProcessor 'org.projectlombok:lombok:1.18.42'
-
+    errorprone 'com.google.errorprone:error_prone_core:2.44.0'
     implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
     implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
     implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.23.1'
@@ -38,10 +40,20 @@ dependencies {
     testImplementation 'org.junit.platform:junit-platform-launcher:1.10.1'
 
 
-
-
 }
-
+import net.ltgt.gradle.errorprone.CheckSeverity
+tasks.withType(JavaCompile) {
+    options.errorprone {
+        check("NullAway", CheckSeverity.ERROR)
+        option("NullAway:AnnotatedPackages", "com.uber")
+    }
+    // Include to disable NullAway on test code
+    if (name.toLowerCase().contains("test")) {
+        options.errorprone {
+            disable("NullAway")
+        }
+    }
+}
 test {
     useJUnitPlatform()
     minHeapSize = "8g"

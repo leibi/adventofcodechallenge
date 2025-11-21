@@ -3,7 +3,11 @@ package net.leibi.adventofcode2023.day11;
 import lombok.extern.log4j.Log4j2;
 import net.leibi.helpers.InputHelper;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Log4j2
@@ -95,18 +99,6 @@ public class Day11 {
 
     }
 
-    private Long getNewCoordinate(long coordinate, Long factor, List<Long> indexList) {
-        // how can we get from the old coordinate to the new coordinate
-        // with the columnIndex we know how many expansions we have before this
-
-        var count = indexList.stream().filter(idx -> idx < coordinate).count();
-
-        var expansion = factor * count;
-
-        return coordinate + expansion;
-
-    }
-
     List<Galaxy> getGalaxiesFromUniverse(String small) {
         var matrix = InputHelper.getCharMatrixFromInput(small);
         return getGalaxiesFromUniverse(matrix);
@@ -120,6 +112,30 @@ public class Day11 {
             }
         }
         return result;
+    }
+
+    ArrayList<Long> getRowList(char[][] array) {
+        int width = array[0].length;
+        var indexList = new ArrayList<Long>();
+        for (long i = 0; i < width; i++) {
+            Character[] col = getColumn(array, i);
+            if (Arrays.stream(col).noneMatch(c -> c.equals('#'))) {
+                indexList.add(i);
+            }
+        }
+        return indexList;
+    }
+
+    private Long getNewCoordinate(long coordinate, Long factor, List<Long> indexList) {
+        // how can we get from the old coordinate to the new coordinate
+        // with the columnIndex we know how many expansions we have before this
+
+        var count = indexList.stream().filter(idx -> idx < coordinate).count();
+
+        var expansion = factor * count;
+
+        return coordinate + expansion;
+
     }
 
     private char[][] getExpandedColumns(String expandedRows, int repeatCount) {
@@ -138,7 +154,7 @@ public class Day11 {
             var newRow = new char[newWidth];
             for (int j = 0, nj = 0; j < currentRow.length; nj++, j++) {
                 newRow[nj] = currentRow[j];
-                if (indexList.contains(j)) {
+                if (indexList.contains((long)j)) {
                     for (int i1 = 0; i1 < columnCount; i1++) {
                         newRow[nj + 1] = '.';
                         nj++;
@@ -148,18 +164,6 @@ public class Day11 {
             chars[i] = newRow;
         }
         return chars;
-    }
-
-    ArrayList<Long> getRowList(char[][] array) {
-        int width = array[0].length;
-        var indexList = new ArrayList<Long>();
-        for (long i = 0; i < width; i++) {
-            Character[] col = getColumn(array, i);
-            if (Arrays.stream(col).noneMatch(c -> c.equals('#'))) {
-                indexList.add(i);
-            }
-        }
-        return indexList;
     }
 
     private Character[] getColumn(char[][] array, long index) {

@@ -1,7 +1,6 @@
 package net.leibi.adventofcode2023.day7;
 
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -59,7 +58,7 @@ public record Hand(Cards cards, Long Bid) {
         return isCardHigher(card1, card2);
     }
 
-    private Character getHighestCard(@Nonnull Hand hand) {
+    private Character getHighestCard(Hand hand) {
         var collectionMap = hand.cards().stream().collect(Collectors.groupingBy(Character::charValue, Collectors.counting()));
         var list1 = collectionMap.entrySet().stream()
                 .filter(e -> cards.getWinningCards().contains(e.getKey()))

@@ -1,16 +1,16 @@
 package net.leibi.adventofcode2021.day3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static net.leibi.helpers.InputHelper.getIntegerFromIntArray;
 import static net.leibi.helpers.InputHelper.getIntegerFromString;
 import static net.leibi.helpers.InputHelper.getRowListFromInput;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Day32021 {
 
   int co2ScrubberRating(String input) {
-    return getRating(input, rating.CO_2);
+    return getRating(input, RatingEnum.CO_2);
   }
 
   public int getLifeSupportRating(final String input) {
@@ -18,10 +18,10 @@ public class Day32021 {
   }
 
   int getOxigenGeneratorRating(String input) {
-    return getRating(input, rating.OXIGEN);
+    return getRating(input, RatingEnum.OXIGEN);
   }
 
-  int getRating(String input, rating rating) {
+  int getRating(String input, RatingEnum rating) {
     List<String> rowList = getRowListFromInput(input);
     List<String> columns = getColumnsFromRowList(rowList);
 
@@ -29,7 +29,7 @@ public class Day32021 {
     for (int i = 0; i < columns.size(); i++) {
       columns = getColumnsFromRowList(filteredRowList);
       int mostCommonBit =
-          rating == Day32021.rating.OXIGEN
+          rating == RatingEnum.OXIGEN
               ? getMostCommonBinaryInString(columns.get(i))
               : getLeastCommonBinaryInString(columns.get(i));
       filteredRowList = getRowsWithBinaryInPosition(filteredRowList, mostCommonBit, i);
@@ -39,7 +39,7 @@ public class Day32021 {
     return getIntegerFromString(filteredRowList.get(0));
   }
 
-  enum rating {
+  enum RatingEnum {
     OXIGEN,
     CO_2
   }

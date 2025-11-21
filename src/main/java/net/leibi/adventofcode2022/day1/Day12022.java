@@ -1,23 +1,23 @@
 package net.leibi.adventofcode2022.day1;
 
-import static net.leibi.helpers.InputHelper.getIntegerListFromInput;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+
+import static net.leibi.helpers.InputHelper.getIntegerListFromInput;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Day12022 {
 
-  public static Integer getMostCalories(@NonNull final String input) {
+  public static Integer getMostCalories( final String input) {
     return getElfesFromInput(input).stream().map(Elf::totalCalories).max(Integer::compareTo)
         .orElse(0);
   }
 
-  public static Integer getCaloriesTopThreeElfes(@NonNull final String input) {
+  public static Integer getCaloriesTopThreeElfes( final String input) {
     return getElfesFromInput(input).stream().map(Elf::totalCalories)
         .sorted((i1, i2) -> Integer.compare(i2,i1))
         .limit(3)
@@ -25,7 +25,7 @@ public class Day12022 {
 
   }
 
-  static List<Elf> getElfesFromInput(@NonNull final String input) {
+  static List<Elf> getElfesFromInput(final String input) {
     List<String> substrings = Arrays.stream(input.split("\\n\\n")).toList();
     return getElfesFromStringslist(substrings);
   }
