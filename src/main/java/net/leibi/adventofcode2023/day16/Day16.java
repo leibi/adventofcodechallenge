@@ -1,6 +1,6 @@
 package net.leibi.adventofcode2023.day16;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import net.leibi.helpers.InputHelper;
 
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 
-@Slf4j
+@Log4j2
 public class Day16 {
 
     public static final int ANSWERDAY1SMALL = 46;

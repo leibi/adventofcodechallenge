@@ -1,7 +1,7 @@
 package net.leibi.adventofcode2023.day7;
 
-import jakarta.annotation.Nonnull;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.stream.Collectors;

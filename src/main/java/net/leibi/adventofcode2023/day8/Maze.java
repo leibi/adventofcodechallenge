@@ -1,13 +1,13 @@
 package net.leibi.adventofcode2023.day8;
 
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Slf4j
+@Log4j2
 public class Maze {
     private final Map<String, MazeItem> mazeItemMap = new HashMap<>();
     private final Map<LoopKey, Integer> loopDetection = new HashMap<>();

@@ -1,13 +1,13 @@
 package net.leibi.adventofcode2023.day7;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
 
-@Slf4j
+@Log4j2
 public class Day7 {
     static List<Character> cardOrder = List.of('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2');
 

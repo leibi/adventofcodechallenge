@@ -1,6 +1,8 @@
 package net.leibi.adventofcode2021.day6;
 
-import static net.leibi.helpers.InputHelper.getIntArrayFromString;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -8,11 +10,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+import static net.leibi.helpers.InputHelper.getIntArrayFromString;
+
+@Log4j2
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Day62021 {
 

@@ -1,6 +1,6 @@
 package net.leibi.adventofcode2023.day1;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.groupingBy;
 
-@Slf4j
+@Log4j2
 public class Day1 {
 
     Map<Integer, String> numbersMap = Map.of(1, "one", 2, "two", 3, "three", 4, "four", 5, "five", 6, "six", 7, "seven", 8, "eight", 9, "nine");

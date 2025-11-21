@@ -2,13 +2,13 @@ package net.leibi.helpers;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.Arrays;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Slf4j
+@Log4j2
 public class InputHelper {
 
     public static List<Integer> getIntegerListFromInput(final String input) {

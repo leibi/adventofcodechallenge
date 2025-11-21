@@ -1,17 +1,14 @@
 package net.leibi.adventofcode2023.day4;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.lang.NonNull;
+import lombok.NonNull;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.groupingBy;
-
-@Slf4j
+@Log4j2
 public class Day4 {
     public Integer sumPointsOfPile(String input) {
 

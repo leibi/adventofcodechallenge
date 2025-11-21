@@ -1,13 +1,13 @@
 package net.leibi.adventofcode2023.day14;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import net.leibi.helpers.InputHelper;
 
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicLong;
 
 
-@Slf4j
+@Log4j2
 public class Day14 {
     public static String replaceCharUsingCharArray(String str, char ch, int index) {
         char[] chars = str.toCharArray();

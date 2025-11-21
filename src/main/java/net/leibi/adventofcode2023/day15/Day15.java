@@ -1,6 +1,6 @@
 package net.leibi.adventofcode2023.day15;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Slf4j
+@Log4j2
 public class Day15 {
 
     private static final Map<Long, List<LabeledEntry>> boxes = new HashMap<>();

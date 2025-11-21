@@ -1,16 +1,17 @@
 package net.leibi.adventofcode2021.day12;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import net.leibi.helpers.InputHelper;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import net.leibi.helpers.InputHelper;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Slf4j
+@Log4j2
 public class Day122021 {
 
   static List<List<String>> getAllPaths(final String inut) {

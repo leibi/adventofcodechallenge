@@ -1,14 +1,19 @@
 package net.leibi.adventofcode2023.day3;
 
 import com.google.common.base.Strings;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.LineNumberReader;
 import java.io.StringReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 
-@Slf4j
+@Log4j2
 public class Day3 {
 
     public Integer getSumOfPartNummbers(String input) {

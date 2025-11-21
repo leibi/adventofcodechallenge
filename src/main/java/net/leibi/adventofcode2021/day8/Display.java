@@ -1,7 +1,7 @@
 package net.leibi.adventofcode2021.day8;
 
 import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import static java.util.Objects.isNull;
 
 @Getter
-@Slf4j
+@Log4j2
 public class Display {
 
   List<String> patterns;

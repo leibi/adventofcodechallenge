@@ -1,12 +1,12 @@
 package net.leibi.adventofcode2023.day2;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Slf4j
+@Log4j2
 public class Day2 {
 
     static final int cntRed = 12;

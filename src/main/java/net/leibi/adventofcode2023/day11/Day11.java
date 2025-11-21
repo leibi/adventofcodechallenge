@@ -1,12 +1,12 @@
 package net.leibi.adventofcode2023.day11;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import net.leibi.helpers.InputHelper;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Slf4j
+@Log4j2
 public class Day11 {
 
     public char[][] getExpandedUniverse(String small) {
