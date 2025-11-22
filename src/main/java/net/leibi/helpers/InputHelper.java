@@ -82,4 +82,79 @@ public class InputHelper {
             log.info(Arrays.toString(row));
         }
     }
+
+    public static List<String> getColumnListFromInput(String clean) {
+        List<String> rowList = getRowListFromInput(clean);
+        int numberOfColumns = rowList.getFirst().length();
+
+        String[] columns = new String[numberOfColumns];
+        Arrays.fill(columns, "");
+
+        for (String row : rowList) {
+            for (int colIndex = 0; colIndex < numberOfColumns; colIndex++) {
+                columns[colIndex] += row.charAt(colIndex);
+            }
+        }
+        return Arrays.stream(columns).toList();
+    }
+
+    public static List<String> getDiagonalListFromInput(String clean) {
+     // assume the string is a matrix n times m
+        var rowList =getRowListFromInput(clean);
+        int numberOfRows = rowList.size();
+        int numberOfColumns = rowList.getFirst().length();
+
+        // there are (n + m -1) diagonals
+        String[] diagonals = new String[2*(numberOfRows + numberOfColumns - 1)];
+        Arrays.fill(diagonals, "");
+
+
+        //get all diagonals from the columns starting from the first row
+        for (int col = 0; col < numberOfColumns; col++) {
+            int currentCol = col;
+            StringBuilder diagonal = new StringBuilder();
+            for (int row = 0; row < numberOfRows && currentCol < numberOfColumns; row++) {
+                diagonal.append(rowList.get(row).charAt(currentCol));
+                currentCol++;
+            }
+            diagonals[col] = diagonal.toString();
+        }
+
+        //get all the diagonals from right to left starting from the first column
+        for (int col = 1; col < numberOfColumns; col++) {
+            int currentCol = col;
+            StringBuilder diagonal = new StringBuilder();
+            for (int row = 0; row < numberOfRows && currentCol >= 0; row++) {
+                diagonal.append(rowList.get(row).charAt(currentCol));
+                currentCol--;
+            }
+            diagonals[numberOfColumns -1 + col] = diagonal.toString();
+        }
+
+
+        // get the diagonals from left to right starting from the second row
+        for (int row = 1; row < numberOfRows; row++) {
+            int currentRow = row;
+            StringBuilder diagonal = new StringBuilder();
+            for (int col = numberOfColumns -1; col >=0 && currentRow < numberOfRows; col--) {
+                diagonal.append(rowList.get(currentRow).charAt(col));
+                currentRow++;
+            }
+            diagonals[ (numberOfRows -1) + (numberOfColumns -1) + row -1] = diagonal.toString();
+        }
+
+        //get all diagonals from the rows starting from the second row
+        for (int row = 1; row < numberOfRows; row++) {
+            int currentRow = row;
+            StringBuilder diagonal = new StringBuilder();
+            for (int col = 0; col < numberOfColumns && currentRow < numberOfRows; col++) {
+                diagonal.append(rowList.get(currentRow).charAt(col));
+                currentRow++;
+            }
+            diagonals[(numberOfRows -1) + (numberOfColumns -1) + (numberOfRows -1) + row -1] = diagonal.toString();
+        }
+
+
+        return Arrays.stream(diagonals).toList();
+    }
 }
