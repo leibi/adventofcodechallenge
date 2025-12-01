@@ -6,10 +6,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class Day4Test {
 
-
     @Test
     void testDay4Small() {
         assertThat(Day4.solveDay4Part1(INPUT.SMALL)).isEqualTo(18);
+    }
+
+    @Test
+    void testDay4Big() {
+        assertThat(Day4.solveDay4Part1(INPUT.BIG)).isEqualTo(18);
     }
 
     @Test
@@ -27,7 +31,6 @@ class Day4Test {
         assertThat(Day4.countHorizontal(INPUT.SMALL)).isEqualTo(5);
     }
 
-
     @Test
     void testDay4Part1Vertical() {
         assertThat(Day4.countVertical(INPUT.CLEAN)).isEqualTo(1);
@@ -37,6 +40,7 @@ class Day4Test {
     void testDay4Part1VerticalSMALL() {
         assertThat(Day4.countVertical(INPUT.SMALL)).isEqualTo(3);
     }
+
     @Test
     void testDay4Part1Diag() {
         assertThat(Day4.countDiag(INPUT.CLEAN)).isEqualTo(1);

@@ -15,11 +15,8 @@ class Day4Test {
 
     @Test
     void testPointsOfPileBig() {
-
         assertThat(day4.sumPointsOfPile(Input.BIG)).isEqualTo(15268);
-
     }
-
 
     @Test
     void testPointsOfPileSmall_Rec() {

@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Day4 {
 
-
     public static int solveDay4Part1(String input) {
         return countHorizontal(input) + countVertical(input) + countDiag(input);
     }
@@ -25,17 +24,13 @@ public class Day4 {
 
     private static Integer countSubstrings(String fullString, String seachString) {
         var charsWithOutSearch = fullString.replace(seachString, "");
-        return (fullString.length() - charsWithOutSearch.length())
-                / seachString.length();
+        return (fullString.length() - charsWithOutSearch.length()) / seachString.length();
     }
 
     private static int getSubStringCounts(List<String> strings) {
         return strings.stream()
                 .map(s -> countSubstrings(s, "SAMX") + countSubstrings(s, "XMAS"))
                 .reduce(0, Integer::sum);
-
-
     }
-
 
 }
