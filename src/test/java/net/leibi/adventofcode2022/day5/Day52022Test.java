@@ -42,7 +42,7 @@ class Day52022Test {
 
   @Test
   void getStacksFromSubInput() {
-
+      @SuppressWarnings("MisleadingEscapedSpace")
     String s = """
                 [A] \s
             [D] [Y] \s
@@ -58,7 +58,7 @@ class Day52022Test {
 
   @Test
   void moveCrate(){
-
+      @SuppressWarnings("MisleadingEscapedSpace")
     String s = """
                 [A] \s
             [D] [Y] \s
@@ -89,7 +89,7 @@ class Day52022Test {
 
   @Test
   void moveCrate9001(){
-
+      @SuppressWarnings("MisleadingEscapedSpace")
     String s = """
                 [A] \s
             [D] [Y] \s

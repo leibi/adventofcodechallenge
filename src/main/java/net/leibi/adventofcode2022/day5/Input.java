@@ -2,6 +2,7 @@ package net.leibi.adventofcode2022.day5;
 
 public class Input {
 
+    @SuppressWarnings("MisleadingEscapedSpace")
   public static final String small = """
           [D]   \s
       [N] [C]   \s
@@ -14,6 +15,7 @@ public class Input {
       move 1 from 1 to 2
       """;
 
+    @SuppressWarnings("MisleadingEscapedSpace")
   public static final String large = """
       [M] [H]         [N]               \s
       [S] [W]         [F]     [W] [V]   \s
