@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Input {
 
-  public static final String SMALL =
+  static final String SMALL =
 """
 L68
 L30
@@ -20,7 +20,7 @@ R14
 L82
 """;
 
-  public static final String BIG =
+  static final String BIG =
 """
 R45
 L42

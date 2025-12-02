@@ -12,17 +12,17 @@ class Day2Test {
 
     @Test
     void part1Small() {
-        assertThat((day2.part1(Input.SMALL, false))).isEqualTo(2L);
+        assertThat(day2.part1(Input.SMALL, false)).isEqualTo(2L);
     }
 
     @Test
     void part1Big() {
-        assertThat((day2.part1(Input.BIG, false))).isEqualTo(624L);
+        assertThat(day2.part1(Input.BIG, false)).isEqualTo(624L);
     }
 
     @Test
     void part2Small() {
-        assertThat((day2.part1(Input.SMALL, true))).isEqualTo(4L);
+        assertThat(day2.part1(Input.SMALL, true)).isEqualTo(4L);
     }
 
     @Test
