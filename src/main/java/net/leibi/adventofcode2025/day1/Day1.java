@@ -1,9 +1,11 @@
 package net.leibi.adventofcode2025.day1;
 
 import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import net.leibi.helpers.InputHelper;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
+@Log4j2
 public class Day1 {
 
   record Order(Character direction, int distance) {
@@ -45,22 +47,24 @@ public class Day1 {
 
     for (var order : orderList) {
 
-      var nextPosition =
-          order.direction == 'L'
-              ? (currentPosition - order.distance)
-              : (currentPosition + order.distance);
+      var nextPosition = order.direction == 'L'
+          ? (currentPosition - order.distance)
+          : (currentPosition + order.distance);
+
+      log.info("{}: CurrentPos: {}, NextPos: {}", order, currentPosition, nextPosition);
 
       // how many times we pass 0
       if (order.direction == 'L') {
-        if (nextPosition <= 0) {
-            zeros += Math.abs(nextPosition) / 100 + 1;
+        if (nextPosition <= 0 && currentPosition != 0) {
+          zeros += Math.abs(nextPosition) / 100 + 1;
         }
       } else {
         if (nextPosition >= 100) {
-          zeros +=  (Math.abs(nextPosition)) / 100 ;
+          zeros += Math.abs(nextPosition) / 100;
         }
       }
       currentPosition = (100 + (nextPosition % 100)) % 100;
+      log.info("{}: New CurrentPos: {}", order, currentPosition);
     }
 
     return zeros;
