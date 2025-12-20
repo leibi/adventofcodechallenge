@@ -24,30 +24,35 @@ class Day1Test {
   }
 
   @Test
+  void day1Part2Test() {
+    assertThat(Day1.day1Part2("L50\nR150")).isEqualTo(2);
+  }
+
+  @Test
   void day1Part2Big() {
-    assertThat(Day1.day1Part2(Input.BIG)).isEqualTo(6);
+    assertThat(Day1.day1Part2(Input.BIG)).isEqualTo(5774);
   }
 
   @ParameterizedTest
   @CsvSource({
-      // "R100,1",
-      // "L100,1",
-      // "R150,2",
-      // "L150,2",
-      // "R99,1",
-      // "L99,1",
-      // "R1,0",
-      // "L1,0",
-      // "R49,0",
-      // "L49,0",
-      // "R50,1",
-      // "L50,1",
-      // "R200,2",
-      // "L200,2",
-      // "R250,3",
-      // "L250,3",
-      // "'L50\nR150',2",
-      // "'L50\nR150\nL50',3",
+      "R100,1",
+      "L100,1",
+      "R150,2",
+      "L150,2",
+      "R99,1",
+      "L99,1",
+      "R1,0",
+      "L1,0",
+      "R49,0",
+      "L49,0",
+      "R50,1",
+      "L50,1",
+      "R200,2",
+      "L200,2",
+      "R250,3",
+      "L250,3",
+      "'L50\nR150',2",
+      "'L50\nR150\nL50',3",
       "'L68',1",
       "'L68\nL30',1",
       "'L68\nL30\nR48',2",

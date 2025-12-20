@@ -59,7 +59,7 @@ public class Day1 {
           zeros += Math.abs(nextPosition) / 100 + 1;
         }
       } else {
-        if (nextPosition >= 100 && currentPosition != 0) {
+        if (nextPosition >= 100) {
           zeros += Math.abs(nextPosition) / 100;
         }
       }
